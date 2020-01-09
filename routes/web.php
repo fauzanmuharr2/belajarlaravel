@@ -35,7 +35,23 @@ Route::get('/makanan/{makan}/{minum}/{krupuk}/{harga}',function($mkn,$teh,$krupu
     return 'Makanan yang saya pesan adalah '.$mkn. '<br>Pesen minum ' .$teh. '<br>Sama Pesen '.$krupuk. '<br>Harganya ' .$hrg;
 });
 
+// rout optional parameter
+Route::get('halo/{nama?}',function($nama='Fauzan Muharram'){
+  return 'Halo Nama Saya adalah '.$nama;
+});
 
+Route::get('/pesanan/{minuman?}/{makanan?}/{harga?}',function($minuman=null,$makanan=null,$harga=null){
+
+    if (isset($minuman)) {
+        echo 'Anda Memesan : '.$minuman;
+    } if (isset($makanan)) {
+        echo ' & '.$makanan;
+    } if (isset($harga)) {
+        echo ' Harganya Rp.'.$harga;
+    } if ($makanan == null & $minuman == null & $harga == null) {
+        echo 'Anda memesan sesuatu';
+    }
+});
 
 
 
