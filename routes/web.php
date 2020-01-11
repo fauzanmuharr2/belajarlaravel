@@ -53,18 +53,86 @@ Route::get('/pesanan/{minuman?}/{makanan?}/{harga?}',function($minuman=null,$mak
     }
 });
 
+// MENCARI SEMUA MODEL
 
+Route::get('/testmodel', function(){
+    $query = App\Post::all();
+    return $query;
+});
 
+// MENCARI MODEL SESUAI ID
 
+Route::get('/testmodel', function(){
+    $query = App\Post::find(1);
+    return $query;
+});
 
+// MENCARI BERDASARKAN TITLE
 
+Route::get('/testmodel', function(){
+    $query = App\Post::where('title','like','%cepat nikah')->get();
+    return $query;
+});
 
+// MENGUBAH RECORD, (HAPUS SEMUA ISI FUNCTION)
 
+Route::get('/testmodel', function(){
+    $query = App\Post::find(1);
+    $query->title = "Ciri Keluarga Sakinah";
+    $query->save();
+    return $query;
+});
 
+// MENGHAPUS RECORD, (HAPUS SEMUA ISI FUNCTION)
 
+Route::get('/testmodel', function(){
+    $query = App\Post::find(1);
+    $query->delete();
+    // check di database
+});
 
+// MENAMBAH RECORD , (HAPUS SEMUA ISI FUNCTION)
 
+Route::get('/testmodel', function(){
+    $query = new App\Post;
+    $query->title = "7 Amalan Pembuka Jodoh";
+    $query->content = "Shalat malam, sedekah, puasa sunah, silahturahmi, senyum, doa, tobat";
+    $query->save();
+    return $query;
+    // check record baru di database
+});
 
+Route::get('/testmodel22', function(){
+    $query = App\Penggajian::all();
+    return $query;
+});
+
+Route::get('/data-gaji-1', function(){
+    $query = App\Penggajian::where('agama','=','islam')->get();
+    return $query;
+});
+
+Route::get('/data-gaji-2', function(){
+    $query = App\Penggajian::select('id','nama','agama')->where('agama','=','islam')->get();
+    return $query;
+});
+
+Route::get('/data-gaji/{id}', function($id){
+    $query = App\Penggajian::find($id);
+    return $query;
+});
+
+Route::get('tambah-data-gaji',function(){
+    $query = new App\Penggajian();
+    $query->nama = 'Vania Wynne Maida';
+    $query->jabatan = 'Sekertaris';
+    $query->jeniskelamin = 'Perempuan';
+    $query->alamat = 'Ujung Berung';
+    $query->total_penggajian = '75.000.000';
+    $query->agama = 'islam';
+    $query->save();
+    return $query;
+});
 
 
 
