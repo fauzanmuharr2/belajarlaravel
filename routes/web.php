@@ -134,11 +134,52 @@ Route::get('tambah-data-gaji',function(){
     return $query;
 });
 
+    Route::get('halo1','SekolahController@hallo1');
 
+    Route::get('halo2','SekolahController@hallo2');
 
+    Route::get('halo3','SekolahController@hallo3');
 
+    Route::get('halo4','SekolahController@hallo4');
 
+    Route::get('halo5','SekolahController@hallo5');
 
+    Route::get('halo6','SekolahController@hallo6');
+
+    Route::get('halo7','SekolahController@hallo7');
+
+    Route::get('halo8','SekolahController@hallo8');
+
+    Route::get('halo9','SekolahController@hallo9');
+
+    Route::get('halo10','SekolahController@hallo10');
+
+    Route::get('jeniskucing/{warna}','SekolahController@jeniskucing');
+
+    Route::get('/jeniskucing1/{warna?}',function($warna=null){
+
+    if (isset($warna)) {
+        return 'Kucing Anda Warna : '.$warna;
+    } else {
+        return 'Kucing Anda Warna : ';
+    }
+});
+
+    Route::get('/beli/{item?}/{harga?}',function($item=null, $harga=null){
+
+    if (isset($item)) {
+        echo 'Anda memesan  : '.$item;
+    }
+    if (isset($harga)) {
+     if ($harga >= 15000) {
+        echo ' Ukuran Jumbo ';
+    } elseif ($harga < 15000 && $harga >= 7500) {
+        echo ' Ukuran Medium';
+    } elseif ($harga < 7500) {
+        echo ' Ukuran Small';
+    }
+}
+});
 
 
 
