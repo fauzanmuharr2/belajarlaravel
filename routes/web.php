@@ -171,15 +171,28 @@ Route::get('tambah-data-gaji',function(){
         echo 'Anda memesan  : '.$item;
     }
     if (isset($harga)) {
-     if ($harga >= 15000) {
+            if ($harga >= 15000) {
         echo ' Ukuran Jumbo ';
-    } elseif ($harga < 15000 && $harga >= 7500) {
+    }       elseif ($harga < 15000 && $harga >= 7500) {
         echo ' Ukuran Medium';
-    } elseif ($harga < 7500) {
+    }       elseif ($harga < 7500 && $harga > 1000) {
         echo ' Ukuran Small';
+    } else {
+        echo '  (Maaf anda memasukan digit yang salah<b>!</b>)';
     }
-}
+}           if (!$item && !$harga){
+        echo 'Silahkan masukan pesanan anda';
+    }
 });
+
+    Route::get('book','BookController@index');
+    Route::get('book-create/{jdl}','BookController@create');
+    Route::get('book/{id}','BookController@show');
+    Route::get('book-edit/{id}/{jdl}','BookController@edit');
+    Route::get('book-delete/{id}','BookController@delete');
+    Route::get('book-select','BookController@data');
+
+
 
 
 

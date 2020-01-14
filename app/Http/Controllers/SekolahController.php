@@ -70,11 +70,13 @@ public function beli($item,$harga)
      if ($harga >= 15000) {
         echo ' Ukuran Jumbo ';
     } elseif ($harga < 15000 && $harga >= 7500) {
-        echo ' Ukuran medium';
+        echo ' Ukuran Medium';
     } elseif ($harga < 7500) {
-        echo ' Ukuran small';
+        echo ' Ukuran Small';
     }
-}
+}   if (!$item && !$harga){
+        echo 'Silahkan masukan pesanan anda';
+    }
 }
 
 }
