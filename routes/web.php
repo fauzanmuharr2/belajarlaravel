@@ -193,6 +193,12 @@ Route::get('tambah-data-gaji',function(){
     Route::get('book-select','BookController@data');
 
 
+    // Passing Data
+        Route::get('passing','PracticeController@pass');
+        Route::get('passing1','PracticeController@pass1');
+        Route::get('passing2','PracticeController@pass2');
+        Route::get('barang','BarangController@index');
+
 
 
 
