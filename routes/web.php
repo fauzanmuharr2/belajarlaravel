@@ -197,9 +197,37 @@ Route::get('tambah-data-gaji',function(){
         Route::get('passing','PracticeController@pass');
         Route::get('passing1','PracticeController@pass1');
         Route::get('passing2','PracticeController@pass2');
-        Route::get('barang','BarangController@index');
+        //Route::get('barang','BarangController@index');
 
+        // boook route
+        Route::resource('buku','BookController');
 
+        // barang route
+        Route::resource('belanja','BarangController');
+
+        // BLADE
+        Route::get('home', function(){
+            return view('home');
+        });
+
+        Route::get('about', function(){
+            return view('about');
+        });
+
+        Route::get('contact', function(){
+            return view('contact');
+        });
+
+        Route::get('book1', function(){
+            return view('book1');
+        });
+
+        Route::get('barang1', function(){
+            return view('barang1');
+        });
+        Route::get('rumah', function(){
+            return view('rumah');
+        });
 
 
 
