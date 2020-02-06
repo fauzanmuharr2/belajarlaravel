@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    @extends('layouts.barbok')
+    @section('konten')
+
+
         <center>List BOOK</center>
         <table border="1">
             <thead>
@@ -29,5 +33,6 @@
 
             </tbody>
         </table>
-</body>
+@endsection
+    </body>
 </html>

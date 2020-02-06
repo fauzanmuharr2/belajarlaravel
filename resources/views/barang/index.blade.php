@@ -7,7 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-     <center>Daftar</center>
+    @extends('layouts.barbok')
+        @section('konten')
+
+
+     <center>List Daftar</center>
         <table border="1">
             <thead>
                 <tr>
@@ -29,5 +33,6 @@
 
             </tbody>
         </table>
+        @endsection
 </body>
 </html>
